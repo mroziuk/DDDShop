@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Shop.Domain.Model.Customer" assembly="Shop.Domain" default-lazy="false">
+	<class name="Customer" table="Customer">
+		<id name="Id">
+			<generator class="native" />
+		</id>
+		<property name="FullName" />
+		<property name="Email" />
+		<property name="CreatedAccount" />
+		<many-to-one name="Address" column="AddressId" />  <!--not-null="true"-->
+	</class>
+</hibernate-mapping>

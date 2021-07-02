@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Shop.Domain.Model.Order" assembly="Shop.Domain" default-lazy="false">
+	<class name="Order" table="Orders">
+		<id name="Id">
+			<generator class="native" />
+		</id>
+		<set name="OrderItems" cascade="all">
+			<key column="product_id"/>
+			<one-to-many class="Shop.Domain.Model.Product.Product"/>
+		</set>
+		<many-to-one name="Customer" column="CustomerId"/>
+		<property name="CreatedTime" />
+		<property name="DeliveryType" />
+		<property name="PaymentType" />
+	</class>
+</hibernate-mapping>
