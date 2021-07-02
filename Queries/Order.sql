@@ -1,9 +1,10 @@
 drop table if exists Orders
 go
+drop table if exists OrderProduct
+go
 create table Orders
 (
 	ID int primary key identity,
-	product_id int,
 	CustomerId int,
 	CreatedTime	DateTime,
 	DeliveryType int,
@@ -11,5 +12,11 @@ create table Orders
 )
 go
 
+
+create table OrderProduct
+(
+	OrderID int ,
+	ProductID int,
+)
 SELECT * FROM Orders;
 GO

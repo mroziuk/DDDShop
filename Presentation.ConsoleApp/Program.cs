@@ -57,7 +57,7 @@ namespace Presentation.ConsoleApp
             IList<Product> cart = new List<Product>();
             string[] query = { "", "" };
             Order order = new Order();
-            //Customer customer = shop.GetAllCustomers()[0];
+            Customer customer = shop.GetAllCustomers()[0];
             while (query[0] != "exit")
             {
                 query = Console.ReadLine().Split();
@@ -69,18 +69,18 @@ namespace Presentation.ConsoleApp
                     case "less": result = shop.productRepository.FilterProductsPriceLessThat(int.Parse(query[1])); break;
                     case "greater": result = shop.productRepository.FilterProductsPriceGreaterThat(int.Parse(query[1])); break;
                     case "add": cart.Add(result[int.Parse(query[1])]); break;
-                    //case "push":
-                    //    {
-                    //        order = new Order();
-                    //        shop.AddCustomerToOrder(order, customer);
-                    //        foreach (var item in cart)
-                    //        {
-                    //            shop.AddProductToOrder(order, item);
-                    //        }
-                    //        shop.AddNewOrder(order);
-                    //        cart.Clear();
-                    //        break;
-                    //    }
+                    case "push":
+                        {
+                            order = new Order();
+                            shop.AddCustomerToOrder(order, customer);
+                            foreach (var item in cart)
+                            {
+                                shop.AddProductToOrder(order, item);
+                            }
+                            shop.AddNewOrder(order);
+                            cart.Clear();
+                            break;
+                        }
                     case "cart":
                         {
                             Console.WriteLine("cart:");

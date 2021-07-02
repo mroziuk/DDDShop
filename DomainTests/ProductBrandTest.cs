@@ -6,12 +6,17 @@ using NHibernate.Linq;
 using Shop.Domain.Model.Product;
 using System;
 using System.Collections.Generic;
+using Shop.Infrastructure.Repositories;
+using Shop.Domain.Model.Product.Repositories;
+using Shop.Domain.Model.Customer;
 
 namespace DomainTests
 {
     [TestClass]
     public class ProductBrandTest
     {
+        private IProductRepository productRepository = new ProductNH();
+        private IBrandRepository brandRepository = new BrandNH();
         static ISession OpenSession()
         {
             return new Configuration().Configure().BuildSessionFactory().OpenSession();
@@ -50,6 +55,15 @@ namespace DomainTests
                 Console.WriteLine(result);
             }
             Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        public void AddBrandToProduct()
+        {
+            //Address a = new Address { City = "city1", Country = "country1", Street = "street1", Number = 1 };
+            //Customer c1 = new Customer { FullName = "customer1", Email = "email1" };
+            //Customer c2 = new Customer { FullName = "customer2", Email = "email2" };
+            
         }
     }
 }

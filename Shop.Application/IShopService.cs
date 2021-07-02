@@ -10,11 +10,11 @@ namespace Shop.Application
     public interface IShopService
     {
         void AddNewOrder(Order o);
-        OrderItems CreateNewOrderItem(Product p, int quantity);
-        // AddPropertyToOrderItems(OrderItems o, Property p);
+        //OrderProducts CreateNewOrderItem(Product p, int quantity);
+        // AddPropertyToOrderItems(OrderProducts o, Property p);
         void AddProductToOrder(Order o, Product p);
         void AddCustomerToOrder(Order o, Customer c);
-        //void AddOrderItemsToOrder(Order o, OrderItems oi);
+        //void AddOrderItemsToOrder(Order o, OrderProducts oi);
         void ChooseDeliveryType(Order o, string d);
         void ChoosePaymentType(Order o, string p);
         IList<Order> GetAllOrders();

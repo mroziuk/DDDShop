@@ -4,9 +4,9 @@
 		<id name="Id">
 			<generator class="native" />
 		</id>
-		<set name="OrderItems" cascade="all">
-			<key column="product_id"/>
-			<one-to-many class="Shop.Domain.Model.Product.Product"/>
+		<set name="OrderProducts" cascade="all" table="OrderProduct">
+			<key column="OrderID"/>
+			<many-to-many column="ProductID" class="Shop.Domain.Model.Product.Product"/>
 		</set>
 		<many-to-one name="Customer" column="CustomerId"/>
 		<property name="CreatedTime" />

@@ -24,12 +24,13 @@ namespace Shop.Application
         public ShopService()
         {
             //productRepository = new ProductIM();
-            productRepository = new ProductNH();
-            orderRepository = new OrderNH();
             brandRepository = new BrandNH();
+            productRepository = new ProductNH();
 
             addressRepository = new AddressNH();
             customerRepository = new CustomerNH();
+
+            orderRepository = new OrderNH();
         }
         public IList<Product> GetProductPage(int PageNumber, int PageSize)
         {
@@ -50,15 +51,15 @@ namespace Shop.Application
             productRepository.Add(p);
         }
 
-        //public void AddOrderItemsToOrder(Order o, OrderItems oi)
+        //public void AddOrderItemsToOrder(Order o, OrderProducts oi)
         //{
-        //    o.OrderItems.Add(oi);
+        //    o.OrderProducts.Add(oi);
         //}
 
         public void AddProductToOrder(Order o, Product p)
         {
             if( p != null)
-                o.OrderItems.Add(p);
+                o.OrderProducts.Add(p);
         }
         public void ChooseDeliveryType(Order o, string d)
         {
@@ -115,6 +116,11 @@ namespace Shop.Application
         public void AddCustomerToOrder(Order o, Customer c)
         {
             o.Customer = c;
+        }
+
+        public void SetCustomerAddress(Customer c, Address a)
+        {
+            throw new NotImplementedException();
         }
     }
 }

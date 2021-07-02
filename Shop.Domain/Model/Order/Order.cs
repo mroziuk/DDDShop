@@ -11,13 +11,13 @@ namespace Shop.Domain.Model.Order
     {
         public Order()
         {
-            OrderItems = new HashSet<Product.Product>();
+            OrderProducts = new HashSet<Product.Product>();
             DateTime myDateTime = DateTime.Now;
             CreatedTime = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
         }
         public int Id { get; set; }
-        // ISet<OrderItems> OrderItems { get; set; }
-        public ISet<Product.Product> OrderItems { get; set; }
+        // ISet<OrderProducts> OrderProducts { get; set; }
+        public ISet<Product.Product> OrderProducts { get; set; }
         public Customer.Customer Customer { get; set; }
         public string CreatedTime { get; set; }
         public string DeliveryType { get; set; }

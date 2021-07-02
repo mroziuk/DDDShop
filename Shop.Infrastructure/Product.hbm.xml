@@ -11,5 +11,9 @@
 		<property name="Size" />
 		<property name="Color" />
 		<many-to-one name="Brand" column="BrandId" class="Brand"/>
+		<set name="Orders" cascade="all" table="OrderProduct"  inverse="true" >
+			<key column="ProductID"/>
+			<many-to-many column="OrderID" class="Shop.Domain.Model.Order.Order"/>
+		</set>
 	</class>
 </hibernate-mapping>
