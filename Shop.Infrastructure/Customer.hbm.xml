@@ -7,6 +7,6 @@
 		<property name="FullName" />
 		<property name="Email" />
 		<property name="CreatedAccount" />
-		<many-to-one name="Address" column="AddressId" />  <!--not-null="true"-->
+		<many-to-one name="Address" column="AddressId" class="Address"/>  <!--not-null="true"-->
 	</class>
 </hibernate-mapping>

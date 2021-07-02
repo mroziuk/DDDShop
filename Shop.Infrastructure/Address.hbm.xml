@@ -8,5 +8,9 @@
 		<property name="Street" />
 		<property name="Number" />
 		<property name="Country" />
+		<set name="Customers" cascade="persist" inverse="true" lazy="true">
+			<key column="AddressID"/>
+			<one-to-many class="Customer"/>
+		</set>
 	</class>
 </hibernate-mapping>

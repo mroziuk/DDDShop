@@ -57,7 +57,7 @@ namespace Presentation.ConsoleApp
             IList<Product> cart = new List<Product>();
             string[] query = { "", "" };
             Order order = new Order();
-            Customer customer = shop.GetAllCustomers()[0];
+            //Customer customer = shop.GetAllCustomers()[0];
             while (query[0] != "exit")
             {
                 query = Console.ReadLine().Split();

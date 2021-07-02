@@ -28,7 +28,7 @@ create table Customer
 	FullName varchar(50),
 	Email varchar(50),
 	CreatedAccount datetime,
-	AddressId int
+	AddressId int references Address(ID)
 )
 go
 INSERT INTO Customer (FullName, Email,CreatedAccount,AddressId)
