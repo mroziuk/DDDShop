@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+	<session-factory>
+		<property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+		<property name="connection.connection_string">
+			Data Source=(localdb)\LocalDB;
+			Initial Catalog=databaseShop;
+			Integrated Security=True;
+			Connect Timeout=30;
+			Encrypt=False;
+			TrustServerCertificate=False;
+			ApplicationIntent=ReadWrite;
+			MultiSubnetFailover=False
+		</property>
+		<property name="show_sql">false</property>
+		<property name="dialect">NHibernate.Dialect.MsSql2012Dialect</property>
+		<mapping file="Address.hbm.xml"/>
+		<mapping file="Customer.hbm.xml"/>
+		<mapping file="Brand.hbm.xml"/>
+		<mapping file="Product.hbm.xml"/>
+		<mapping file="Order.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
