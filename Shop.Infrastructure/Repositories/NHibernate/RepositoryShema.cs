@@ -56,7 +56,6 @@ namespace Shop.Infrastructure.Repositories
         }
         public IList<T> FindAll()
         {
-            //return new List<Brand>();
             using (ISession s = OpenSession())
             {
                 var queryString = string.Format("from {0} ",typeof(T));

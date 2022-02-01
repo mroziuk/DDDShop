@@ -40,8 +40,8 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.12.3" />
-    <PackageReference Include="NHibernate" Version="5.3.8" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="NHibernate" Version="5.3.10" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>

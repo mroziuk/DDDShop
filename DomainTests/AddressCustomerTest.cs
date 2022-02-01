@@ -9,6 +9,9 @@ namespace DomainTests
     class AddressCustomerTest
     {
         [TestMethod]
-        public void
+        public void test1()
+        {
+            Assert.IsTrue(true);
+        }
     }
 }

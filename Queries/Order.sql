@@ -19,4 +19,5 @@ create table OrderProduct
 	ProductID int,
 )
 SELECT * FROM Orders;
+SELECT * FROM OrderProduct
 GO
