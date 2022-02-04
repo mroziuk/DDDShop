@@ -25,10 +25,16 @@ namespace Presentation.ConsoleApp
                 Console.WriteLine(item);
             }
         }
+
         static void Main(string[] args)
         {
             ShopService shop = new ShopService();
             ProductNH repo = new ProductNH();
+
+
+
+
+
             //foreach (var p in shop.GetAllProducts())
             //{
             //    Console.WriteLine(String.Format("product id {0}, product name: {1}", p.Id, p.Name));
@@ -53,15 +59,18 @@ namespace Presentation.ConsoleApp
             //    }
             //    Console.WriteLine("");
             //}
+
+
+
             IList<Product> result = new List<Product>();
             IList<Product> cart = new List<Product>();
             string[] query = { "", "" };
             Order order = new Order();
             Customer customer = shop.GetAllCustomers()[0];
-            while (query[0] != "exit")
+            while(query[0] != "exit")
             {
                 query = Console.ReadLine().Split();
-                switch (query[0])
+                switch(query[0])
                 {
                     case "exit": break;
                     case "all": result = shop.GetAllProducts(); break;
@@ -73,7 +82,7 @@ namespace Presentation.ConsoleApp
                         {
                             order = new Order();
                             shop.AddCustomerToOrder(order, customer);
-                            foreach (var item in cart)
+                            foreach(var item in cart)
                             {
                                 shop.AddProductToOrder(order, item);
                             }
