@@ -23,5 +23,4 @@ namespace Shop.Domain.Model.Order
         public string DeliveryType { get; set; }
         public string PaymentType { get; set; }
     }
-
 }

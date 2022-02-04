@@ -11,9 +11,9 @@ namespace Shop.Infrastructure.Repositories
         private List<Customer> customers = new List<Customer>();
         public CustomerIM()
         {
-            customers.Add(new Customer(0, "Marek", "marek@gmail.com", DateTime.Now));
-            customers.Add(new Customer(1, "Wacław", "waclaw@gmail.com", DateTime.Now));
-            customers.Add(new Customer(2, "Kuba", "jakub@gmail.com", DateTime.Now));
+            customers.Add(new Customer(0, "Marek", "Markowski", "marek@gmail.com","1234", DateTime.Now));
+            customers.Add(new Customer(1, "Wacław","Wacławski", "waclaw@gmail.com","1234", DateTime.Now));
+            customers.Add(new Customer(2, "Kuba","Kubacki", "jakub@gmail.com","1234", DateTime.Now));
         }
         public IList<Customer> FindAll()
         {

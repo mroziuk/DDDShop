@@ -4,8 +4,10 @@
 		<id name="Id">
 			<generator class="native" />
 		</id>
-		<property name="FullName" />
+		<property name="FirstName" />
+		<property name="LastName" />
 		<property name="Email" />
+		<property name="Password"/>
 		<property name="CreatedAccount" />
 		<many-to-one name="Address" column="AddressId" class="Address"/>  <!--not-null="true"-->
 	</class>

@@ -21,7 +21,7 @@ namespace Shop.Infrastructure.Repositories
             collection = database.GetCollection<Customer>("customers");
             for (int i = 0; i < 5; i++)
             {
-                Customer c = new Customer(i, "Customer "+i, "email@email.email", DateTime.Now);
+                Customer c = new Customer(i, "Customer "+i,"lastname", "email@email.email","1234", DateTime.Now);
                 collection.InsertOne(c);
             };
         }
