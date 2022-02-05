@@ -12,6 +12,7 @@ namespace Presentation.WebApplication.Models
         public Order order;
         public Address addressFrom;
         public Address addressTo;
+        public int addressToId;
         public Cart()
         {
             order = new Order();

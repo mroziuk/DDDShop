@@ -43,3 +43,11 @@ VALUES	('Marek','Markowski','1234', 'marek@markowski.com','2007-05-08 12:35:29.1
 
 SELECT * FROM Customer;
 GO
+
+SELECT ID
+FROM Address
+WHERE
+Address.City = 'Czernica' and
+Address.Country = 'Polska' and
+Address.Number = 2 and
+Address.Street = 'Spokojna'

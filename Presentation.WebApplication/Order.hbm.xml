@@ -4,7 +4,7 @@
 		<id name="Id">
 			<generator class="native" />
 		</id>
-		<set name="OrderProducts" cascade="all" table="OrderProduct">
+		<set name="OrderProducts"  table="OrderProduct">
 			<key column="OrderID"/>
 			<many-to-many column="ProductID" class="Shop.Domain.Model.Product.Product"/>
 		</set>

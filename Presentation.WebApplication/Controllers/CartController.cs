@@ -7,6 +7,7 @@ using Shop.Domain.Model.Order;
 using Shop.Domain.Model.Product;
 using Shop.Domain.Model.Product.Repositories;
 using Shop.Infrastructure.Repositories;
+using Shop.Infrastructure.Repositories.NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,6 +68,31 @@ namespace Presentation.WebApplication.Controllers
                 return RedirectToAction("Index", "Product");
             }
             return Redirect(returnUrl);
+        }
+
+
+
+        public static int selectedAddressId;
+        private AddressNH addressRepository = new AddressNH();
+        [HttpGet]
+        public IActionResult SelectAddress()
+        {
+            var model = new Address();
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> SelectAddress(Address model)
+        {
+            //if address exist in database dont add
+            var id = addressRepository.GetId(model);
+            if(id == 0)
+            {
+                addressRepository.Add(model);
+                id = addressRepository.GetId(model);
+            }
+
+            cart.addressToId = 1;
+            return RedirectToAction("Index", "Cart");
         }
     }
 }
