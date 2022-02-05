@@ -13,7 +13,7 @@ using Shop.Infrastructure.Repositories.NHibernate;
 
 namespace Shop.Application
 {
-    public class ShopService : IShopService, ICustomerService, IProductService
+    public class ShopService : IShopService, IProductService
     {
         public ProductNH productRepository;
         private IOrderRepository orderRepository;
@@ -121,6 +121,25 @@ namespace Shop.Application
         public void SetCustomerAddress(Customer c, Address a)
         {
             throw new NotImplementedException();
+        }
+    }
+    public static class ShopInstance
+    {
+        static ShopService _instance;
+        static ShopInstance()
+        {
+            if(_instance == null)
+            {
+                _instance = new ShopService();
+            }
+        }
+        public static ShopService GetInstance()
+        {
+            if(_instance == null)
+            {
+                _instance = new ShopService();
+            }
+            return _instance;
         }
     }
 }

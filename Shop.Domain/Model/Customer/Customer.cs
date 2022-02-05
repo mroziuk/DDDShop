@@ -25,5 +25,8 @@ namespace Shop.Domain.Model.Customer
         public Customer()
         {
         }
+        public void Validate()
+        {
+        }
     }
 }

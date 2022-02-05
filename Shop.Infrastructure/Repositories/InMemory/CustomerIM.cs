@@ -49,5 +49,10 @@ namespace Shop.Infrastructure.Repositories
             //throw new KeyNotFoundException(id.ToString());
             return null;
         }
+
+        public Customer WithEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

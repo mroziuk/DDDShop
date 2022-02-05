@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Shop.Domain.Model.Product.Product>
+    @{
+        ViewBag.Title = "";
+    }
+
+    <h3>Products</h3>
+
+    <ul>
+        @foreach(var p in Model)
+        {
+            <li>@string.Format("{0} {1} {2} {3} {4}",p.Id, p.Name, p.Price, p.Brand.Name, p.Size, p)</li>
+        }
+    </ul>
+
+
+

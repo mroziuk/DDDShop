@@ -44,5 +44,10 @@ namespace Shop.Infrastructure.Repositories
         {
             return collection.Find(customer => true).ToList<Customer>();
         }
+
+        public Customer WithEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

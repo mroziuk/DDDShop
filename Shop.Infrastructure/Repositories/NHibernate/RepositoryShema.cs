@@ -14,12 +14,6 @@ namespace Shop.Infrastructure.Repositories
     {
         protected static ISession OpenSession()
         {
-            //var mapper = new ModelMapper();
-            //mapper.AddMapping(typeof(ProductMapping));
-            //var hbmMappings = mapper.CompileMappingForAllExplicitlyAddedEntities();
-            //Configuration configuration = new Configuration().Configure();
-            //configuration.AddMapping(hbmMappings);
-            //ISessionFactory sessionFactory = configuration.BuildSessionFactory();
             return new Configuration().Configure().BuildSessionFactory().OpenSession();
         }
         public void Add(T p)
@@ -46,11 +40,6 @@ namespace Shop.Infrastructure.Repositories
         {
             using (ISession s = OpenSession())
             {
-                //var queryString = string.Format("from {0} where Id = :id",
-                //                        typeof(T));
-                //IQuery q = s.CreateQuery(queryString);
-                //T result = q.List<T>()[0]   ;
-                //return result;
                 return s.Get<T>(id);
             }
         }

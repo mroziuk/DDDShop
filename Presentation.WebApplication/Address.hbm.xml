@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Shop.Domain.Model.Customer" assembly="Shop.Domain" default-lazy="false">
+	<class name="Address">
+		<id name="Id">
+			<generator class="native" />
+		</id>
+		<property name="City" />
+		<property name="Street" />
+		<property name="Number" />
+		<property name="Country" />
+		<set name="Customers" cascade="persist" inverse="true" lazy="true">
+			<key column="AddressID"/>
+			<one-to-many class="Customer"/>
+		</set>
+	</class>
+</hibernate-mapping>

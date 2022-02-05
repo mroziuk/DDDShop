@@ -9,6 +9,7 @@ namespace Shop.Domain.Model.Customer.Repositories
         public IList<Customer> FindAll();
         public void Delete(int id);
         public Customer Find(int id);
+        public Customer WithEmail(string email);
         public void Add(Customer c);
     }
 }
