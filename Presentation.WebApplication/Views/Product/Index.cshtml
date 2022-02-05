@@ -1,16 +1,39 @@
 ﻿@model IEnumerable<Shop.Domain.Model.Product.Product>
-    @{
-        ViewBag.Title = "";
+@{
+    ViewBag.Title = "";
+}
+
+<h3>Products</h3>
+
+@*<ul>
+    @foreach(var p in Model)
+    {
+        <li>@string.Format("{0} {1} {2} {3} {4}", p.Id, p.Name, p.Price, p.Brand.Name, p.Size, p)</li>
     }
+</ul>*@
 
-    <h3>Products</h3>
+<hr />
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Size</th>
+        <th>Brand name</th>
+    </tr>
+    @foreach(Shop.Domain.Model.Product.Product product in Model)
+    {
+<tr>
+    <td>@product.Id</td>
+    <td>@product.Name</td>
+    <td>@product.Price</td>
+    <td>@product.Size</td>
+    <td>@product.Brand.Name</td>
+    <td>@Html.ActionLink("Add to cart", "AddToCart", "Cart",new { productId = product.Id })</td>
 
-    <ul>
-        @foreach(var p in Model)
-        {
-            <li>@string.Format("{0} {1} {2} {3} {4}",p.Id, p.Name, p.Price, p.Brand.Name, p.Size, p)</li>
-        }
-    </ul>
+</tr>
+    }
+</table>
 
 
 

@@ -56,3 +56,7 @@ VALUES	('Odzie¿','Buty',100,'turystyczne',3),
 Go
 SELECT * FROM Product;
 GO
+
+delete
+from Product
+where Price = 0

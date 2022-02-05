@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Shop.Domain.Model.Product.Product>
+
+<h2>Cart</h2>
+<div>
+    <form asp-action="Index" method="post">
+        <div style="color:red;">@Html.ValidationSummary()</div>
+        <div class="row">
+            <div class="col-lg-12">@ViewBag.Message</div>
+        </div><br />
+        @foreach(var p in Model)
+        {
+            <div class="row">
+                <div class="col-lg-2">@p.Name</div>
+            </div><br />
+        }
+        
+        <input type="submit" value="Order" class="btn btn-primary" />
+    </form>
+</div>

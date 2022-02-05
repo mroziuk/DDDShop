@@ -7,6 +7,7 @@ using Shop.Application;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Presentation.WebApplication.Models;
 
 namespace Presentation.WebApplication
 {
