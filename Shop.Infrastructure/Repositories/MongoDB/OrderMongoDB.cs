@@ -15,7 +15,7 @@ namespace Shop.Infrastructure.Repositories
         private IMongoCollection<Order> collection;
         public OrderMongoDB()
         {
-            dbClient = new MongoClient("mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb");
+            dbClient = new MongoClient("<<YOUR ATLAS CONNECTION STRING>>");
             //dbClient.DropDatabase("DDDshop");
             database = dbClient.GetDatabase("DDDshop");
             database.DropCollection("products");
